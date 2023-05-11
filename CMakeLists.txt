@@ -63,13 +63,10 @@ install(TARGETS ${PROJECT_NAME}
         DESTINATION "${CMAKE_INSTALL_LIBDIR}")
 
 
-# When your SKSE .dll is compiled, this will automatically copy the .dll into your mods folder.
-# Only works if you configure DEPLOY_ROOT above (or set the SKYRIM_MODS_FOLDER environment variable)
+#==============================================================================
+#Deployment
+#==============================================================================
 if(DEFINED OUTPUT_FOLDER)
-    # If you specify an <OUTPUT_FOLDER> (including via environment variables)
-    # then we'll copy your mod files into Skyrim or a mod manager for you!
-
-    # Copy the SKSE plugin .dll files into the SKSE/Plugins/ folder
     set(DLL_FOLDER "${OUTPUT_FOLDER}/SKSE/Plugins")
 
     message(STATUS "SKSE plugin output folder: ${DLL_FOLDER}")
@@ -82,7 +79,6 @@ if(DEFINED OUTPUT_FOLDER)
         VERBATIM
     )
 
-    # If you perform a "Debug" build, also copy .pdb file (for debug symbols)
     if(CMAKE_BUILD_TYPE STREQUAL "Debug")
         add_custom_command(
             TARGET "${PROJECT_NAME}"
