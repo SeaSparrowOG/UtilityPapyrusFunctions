@@ -29,3 +29,8 @@ Returns the associated enchantment of the given actor's equipped ammo. Accounts 
 Returns the associated enchantment of a given ammo. Note that this will not return anything if the base ammo record is not enchanted - but unless you are running Ammo Enchanting, this will never be the case. 
 ### GetAllActorsInFaction
 Returns all actors within the given faction. Note that this is EXTREMELY slow. 
+
+## Building
+Want to build based on the source code? It can't be simpler. First, you need the VCPKG_ROOT environment variable. Download and extract VCPKG from the [official repository](https://github.com/microsoft/vcpkg). Then, create a new environment variable called VCPKG_ROOT, and make its variable value equal to the root installation of VCPKG (eg C:\vcpkg).	 Then, download and install [CMake](https://cmake.org/).
+
+After that, you are done. Download the source code, open it with Visual Studio, give it a few minutes, choose a build option (debug/release) and hit build. If you are using MO2, consider setting up an environment variable called SKYRIM_MODS_FOLDER, pointing to the mods directory of your MO2 installation (eg C:\MO2\mods) for automatic deployment. 
