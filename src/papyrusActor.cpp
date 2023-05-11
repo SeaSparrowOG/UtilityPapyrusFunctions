@@ -3,6 +3,7 @@
 namespace PapyrusActor {
 	bool Bind(VM* a_vm) {
 		BIND(GetAllActorPlayableSpells);
+		SKSE::log::info("Bound Actor-related functions.");
 		return true;
 	}
 

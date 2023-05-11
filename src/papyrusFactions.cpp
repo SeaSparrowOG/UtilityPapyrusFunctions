@@ -5,6 +5,7 @@
 namespace PapyrusFactions {
 	bool Bind(VM* a_vm) {
 		BIND(GetAllActorsInFaction);
+		SKSE::log::info("Bound Faction-related functions.");
 		return true;
 	}
 

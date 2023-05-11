@@ -1,6 +1,7 @@
 #include <papyrusFactions.h>
 #include <papyrusWeapons.h>
 #include <papyrusActor.h>
+#include <papyrusVerification.h>
 #include <spdlog/sinks/basic_file_sink.h>
 
 namespace logger = SKSE::log;
@@ -25,13 +26,17 @@ SKSEPluginLoad(const SKSE::LoadInterface* skse) {
     logger::info("Loading SeaSparrow's Papyrus Extender.");
     SKSE::Init(skse);
 
+    //Bind the papyrus functions.
     if (!SKSE::GetPapyrusInterface()->Register(PapyrusFactions::Bind)) {
-
         return false;
     }
-
     if (!SKSE::GetPapyrusInterface()->Register(PapyrusActor::Bind)) {
-
+        return false;
+    }
+    if (!SKSE::GetPapyrusInterface()->Register(PapyrusWeapons::Bind)) {
+        return false;
+    }
+    if (!SKSE::GetPapyrusInterface()->Register(PapyrusVerification::Bind)) {
         return false;
     }
 

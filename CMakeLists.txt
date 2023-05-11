@@ -24,12 +24,14 @@ endif()
 find_package(CommonLibSSE CONFIG REQUIRED)
 
 set(headers
+        include/papyrusVerification.h
         include/papyrusActor.h
         include/papyrusWeapons.h
 		include/papyrusFactions.h)
 
 set(sources
         src/main.cpp
+        src/papyrusVerification.cpp
         src/papyrusActor.cpp
         src/papyrusWeapons.cpp
 		src/papyrusFactions.cpp)
